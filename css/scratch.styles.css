@@ -1,0 +1,172 @@
+/* Basic Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color for readability */
+}
+
+header {
+    background-color: #2c3e50; /* Dark header background */
+    color: white; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Content Block Styling */
+.content-block {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-block h2 {
+    font-size: 1.8em;
+    color: #2c3e50;
+}
+
+/* Ordered and Unordered Lists */
+ol, ul {
+    padding-left: 40px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 20px 0;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Embedded YouTube Video */
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    margin-top: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .content-block {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+li {
+    margin-bottom: 15px; /* Increase space between list items */
+}
+ol li {
+    padding-left: 20px; /* Add padding to the left side of the list items */
+}
+/* Adds margin-top to the first list item after each heading */
+ol li:first-child {
+    margin-top: 15px; /* Adjust the value as needed for spacing */
+}
+
+/* Adds space between the heading and list items */
+.content-block h2 + ol li {
+    margin-top: 20px; /* Creates space between the heading and list items */
+}
+/* Image Resizing */
+.responsive-image {
+    width: 80%; /* Adjust width to 80% of the container */
+    max-width: 600px; /* Add a maximum width to avoid it getting too large */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto; /* Centers the image */
+}
+
+/* Tableau Graph Resizing */
+.tableauPlaceholder object {
+    width: 100%; /* Make the Tableau graph take up full width */
+    height: 700px; /* Increase the height to make it bigger */
+}
+
+/* Ensure the Tableau iframe size remains responsive */
+.tableauPlaceholder {
+    width: 100%;
+    height: auto;
+    max-width: 1100px; /* Set max width for larger screens */
+    margin: 0 auto; /* Centers the graph */
+}
+/* Tableau Graph Container */
+.tableauPlaceholder {
+    width: 100%; /* Make it take up full width */
+    max-width: 1100px; /* Set max width to control the size */
+    margin: 0 auto; /* This centers the container horizontally */
+    display: block; /* Ensure the block display type */
+    text-align: center; /* This centers any text content inside */
+}
+
+/* Tableau Graph Size */
+.tableauPlaceholder object {
+    width: 100%; /* Make the Tableau graph take up the full width of the container */
+    height: 700px; /* Set the desired height */
+}
+
+
+

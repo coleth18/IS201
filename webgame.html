@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Joke Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7fafc; /* Soft background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #e52d27, #b31217); /* Christmas red gradient */
+            color: white;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            background: linear-gradient(145deg, #ffffff, #f0f4f8); /* Soft gradient */
+            color: #333;
+        }
+        h1 {
+            color: #2f855a; /* Christmas green */
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Festive shadow */
+            background: linear-gradient(to right, #2f855a, #38b2ac, #2c7a7b); /* Gradient text effect */
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .joke {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            min-height: 60px;
+            font-weight: 500;
+        }
+        .generate-btn, .reveal-btn {
+            background-color: #2f855a;
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 10px;
+        }
+        .generate-btn:hover, .reveal-btn:hover {
+            background-color: #276749;
+            transform: scale(1.05);
+        }
+        .reveal-btn {
+            background-color: #ffcb05; /* Bright gold for reveal button */
+        }
+        .reveal-btn:hover {
+            background-color: #d4a402;
+        }
+        .disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        /* Decorative title */
+        .title {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: #ffcb05; /* Gold text for Christmas vibes */
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        .generate-btn, .reveal-btn {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .generate-btn:active, .reveal-btn:active {
+            transform: scale(1);
+        }
+        .back-link {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #2f855a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            color: #276749;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="title">🎄 Christmas Joke Generator 🎅</div>
+    <div class="joke" id="jokeDisplay">Click below for a Christmas joke!</div>
+    <button class="generate-btn" onclick="generateJoke()">Get Joke</button>
+    <button class="reveal-btn disabled" id="revealBtn" onclick="revealAnswer()" disabled>Reveal Answer</button>
+
+    <!-- Link back to Scratch page -->
+    <a href="scratch2.html" class="back-link">Back to Scratch Page</a>
+</div>
+
+<script>
+    const jokes = [
+        { setup: "What do you get when you cross a snowman with a vampire?", punchline: "Frostbite!" },
+        { setup: "Why did the Christmas tree go to the barber?", punchline: "It needed a trim!" },
+        { setup: "What’s every elf’s favorite type of music?", punchline: "Wrap music!" },
+        { setup: "Why was the math book sad on Christmas?", punchline: "It had too many problems!" },
+        { setup: "What do snowmen eat for breakfast?", punchline: "Frosted flakes!" },
+        { setup: "What do you call Santa when he stops moving?", punchline: "Santa Pause!" },
+        { setup: "What’s Santa’s favorite kind of potato chip?", punchline: "Kringle cut!" },
+        { setup: "Why is it always so cold at Christmas?", punchline: "Because it’s Decembrrrr!" },
+        { setup: "What do you call a reindeer with bad manners?", punchline: "Rude-olph!" },
+        { setup: "How do sheep say Merry Christmas?", punchline: "Fleece Navidad!" },
+        { setup: "What’s a snowman’s favorite snack?", punchline: "Ice Krispies Treats!" },
+        { setup: "What do you call a cat on the beach during Christmas?", punchline: "Sandy Claws!" },
+        { setup: "What does an elf use to take pictures?", punchline: "An elfie stick!" },
+        { setup: "Why did Santa get a parking ticket?", punchline: "He left his sleigh in a snow-parking zone!" },
+        { setup: "What do you call people who are afraid of Santa?", punchline: "Claustrophobic!" }
+    ];
+
+    let currentJokeIndex = -1;
+
+    function generateJoke() {
+        const randomIndex = Math.floor(Math.random() * jokes.length);
+        currentJokeIndex = randomIndex;
+        const selectedJoke = jokes[randomIndex];
+        
+        // Display the setup of the joke
+        document.getElementById('jokeDisplay').innerText = selectedJoke.setup;
+        
+        // Enable the Reveal Answer button
+        document.getElementById('revealBtn').disabled = false;
+        document.getElementById('revealBtn').classList.remove('disabled');
+    }
+
+    function revealAnswer() {
+        const selectedJoke = jokes[currentJokeIndex];
+        
+        // Display the punchline
+        document.getElementById('jokeDisplay').innerText = selectedJoke.punchline;
+        
+        // Disable the reveal button after the answer is shown
+        document.getElementById('revealBtn').disabled = true;
+        document.getElementById('revealBtn').classList.add('disabled');
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
